@@ -13,6 +13,7 @@ const productSchema = new mongoose.Schema(
     fromArtist: [{ type: String }],
     images: [{ type: String }],
     isFeatured: { type: Boolean, default: false },
+    quantity: { type: Number },
   },
   {
     timestamps: true,
