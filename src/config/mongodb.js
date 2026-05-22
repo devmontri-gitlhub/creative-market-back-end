@@ -8,7 +8,7 @@ export const connectDB = async () => {
     await mongoose.connect(uri, {
       dbName: "creative_market_db",
     });
-    console.log(`"MongoDB connected ❤️`);
+    console.log(`MongoDB connected ❤️`);
   } catch (error) {
     // ถ้าต่อไม่ติด ให้ปริ้นท์ Error สีแดง แล้วสั่งปิดการทำงานของ Server (Exit)
     console.error(`❌ Error connecting to MongoDB: ${error.message}`);
