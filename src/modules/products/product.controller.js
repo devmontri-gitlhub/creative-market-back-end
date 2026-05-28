@@ -3,11 +3,21 @@ import { Product } from "./product.model.js";
 // 1. ดึงข้อมูลสินค้า
 export const getProducts = async (req, res, next) => {
   try {
-    const { featured } = req.query;
+    const { featured, search } = req.query;
 
     let query = {};
     if (featured === "true") {
       query = { isFeatured: true };
+    }
+
+    if (search) {
+      query.$or = [
+        { name: { $regex: search, $options: "i" } },
+        { slug: { $regex: search, $options: "i" } },
+        { cartName: { $regex: search, $options: "i" } },
+        { category: { $regex: search, $options: "i" } },
+        { artist: { $regex: search, $options: "i" } },
+      ];
     }
 
     const products = await Product.find(query);

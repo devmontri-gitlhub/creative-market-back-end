@@ -42,3 +42,6 @@ GET http://localhost:7777/api/products/categories
 
 ### Get product by slug
 GET http://localhost:7777/api/products/cybernecklace
+
+### Search products 
+GET http://localhost:7777/api/products?search=c
