@@ -4,6 +4,8 @@ import { router as cartRoutes } from "./cart.route.js";
 import { router as userRoutes } from "./user.route.js";
 import { router as authRoutes } from "./login.auth.routes.js";
 import { router as orderRoutes } from "./order.route.js";
+import { router as forgotAuthRoutes } from "./forgot.auth.routes.js";
+import { router as resetAuthRoutes } from "./reset.auth.routes.js";
 
 export const router = Router();
 
@@ -11,4 +13,6 @@ router.use("/products", productsRoutes);
 router.use("/cart", cartRoutes);
 router.use("/users", userRoutes);
 router.use("/auth", authRoutes);
+router.use("/auth", forgotAuthRoutes);
+router.use("/auth", resetAuthRoutes);
 router.use("/orders", orderRoutes);
